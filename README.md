@@ -52,4 +52,4 @@ The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_
 
 ## Frequency Following Response Project
 
-![](./img/nvx36+52_scheme.png)
+![](./img/nvx36_scheme.jpg)
