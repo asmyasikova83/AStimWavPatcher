@@ -51,3 +51,5 @@ The [audio/examples](./audio/examples) folder contains examples of WAV files wit
 The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_1s.wav) was obtained by processing the file [audio/origin/input_example_1s.wav](./audio/origin/input_example_1s.wav) by the script [wavpatcher.py](./wavpatcher.py).
 
 ## Frequency Following Response Project
+
+![](C:\Users\msasha\PycharmProjects\AStimWavPatcher\img\FFR_nvx36_136_scheme.pdf)
