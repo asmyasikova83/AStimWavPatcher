@@ -69,6 +69,8 @@ Electrodes MCScap-CS22 https://mcscap.ru/catalog/tes-elektrody-dlya-stimulyatsii
 
 NeoRec 1.6 https://docs.mks.ru/en/file/65dd0ac5d6895#to-docs
 
+Frequency_Following_Response_Astim Version 1 https://github.com/asmyasikova83/Frequency_Following_Response_Astim.git
+
 Detailed description and instruction for Frequency_Following_Response_Astim Version 1 https://docs.mks.ru/download/6a50e1d6de9d5
 
 ## EEG setup for ASTIM + NVX 36 suite
@@ -79,14 +81,17 @@ Detailed description and instruction for Frequency_Following_Response_Astim Vers
 
 ![](./img/nvx_136_scheme.jpg)
 
-The FFR project was launched using ASTIM commands to the right channel of the WAV file.
-Trigger 6 is set to LOW. At the end of the file, trigger 6 is set to HIGH. 
+The WAV file with audio stimuli was generated using ASTIM commands in the right channel of the WAV file.
+To eliminate bone‑conduction artifacts, two types of triggers were used: trigger 6 with the original stimulus
+and trigger 7 with the inverted stimulus. 
+At the beginning of each stimulus trigger 6 (7) is set to LOW. At the end of the stimulus, trigger 6(7) is set to HIGH. 
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
 ## Audio stimuli generation
 
-create_wav.py creates WAV with audio stimuli Da syllable or sinusoidal tones with a predefined range of frequencies
+Script create_wav.py from Frequency_Following_Response_Astim Version 1 creates WAV with audio stimuli:
+Da syllable or sinusoidal tones with a predefined range of frequencies
 
 Example call:
            python create_wav.py  --function multiple_sin --F 110 220 440 880 --TS 100 --TP 100 --N 2 --INV 0
@@ -104,6 +109,16 @@ Example call:
 --INV add polar (inverted) stimulus
 
 --wavfname path to an example of syllable to be multiplied and wrapped into audio stimulation
+
+## Preprocessing and visualization of FFR
+
+Script command_line_ffr.py creates PDF with a plot of the stimulus, its spectra, grand average of FFR  
+and FFR spectra, respectively. Additionally, the correlation coefficient R of stimulus waveform and FFR
+waveform over averages is shown. Relative power of FFR spectral peaks over averages is also visualized. 
+Data (bfd/fif) and associated stimuli (wav) are selected interactively.
+
+Example call:
+        python command_line_ffr.py --TS 250 --TP 200 --fmin 80 --fmax 1500 --tmin -100 --tmax 300 --N 500
 
 ## Requirements
 
