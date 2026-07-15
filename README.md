@@ -129,7 +129,7 @@ Data (bfd/fif) and associated stimuli (wav) are selected interactively.
 
 Example call:
         
-        python command_line_ffr.py --TS 250 --TP 200 --fmin 80 --fmax 1500 --tmin -100 --tmax 300 --N 500
+            python command_line_ffr.py --TS 250 --TP 200 --fmin 80 --fmax 1500 --tmin -100 --tmax 300 --N 500
 
 --TS: stimulus latency
 
