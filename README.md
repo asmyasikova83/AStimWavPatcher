@@ -89,12 +89,9 @@ and trigger 7 with the inverted stimulus.
 At the beginning of each stimulus trigger 6 (7) is set to LOW. At the end of the stimulus, trigger 6(7) is set to HIGH. 
 
 > Attention!
-AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.  
-There is no need to enable channels. However, adding RESET CYCLE when making an audio file
-inv = False
-_ = add_triggers(sinus, sin_tone, inv, sample_rate)
-allows to loose less triggers.
-See function add_triggers() in functions.py in Frequency_Following_Response_Astim Version 1
+AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.
+There is no need to enable channels. However, adding RESET CYCLE when making an audio file allows to lose less triggers.
+See function add_triggers(), make_full_signal() in functions.py in Frequency_Following_Response_Astim Version 1.
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
@@ -131,7 +128,22 @@ waveform over averages is shown. Relative power of FFR spectral peaks over avera
 Data (bfd/fif) and associated stimuli (wav) are selected interactively.
 
 Example call:
+        
         python command_line_ffr.py --TS 250 --TP 200 --fmin 80 --fmax 1500 --tmin -100 --tmax 300 --N 500
+
+--TS: stimulus latency
+
+--TP: interstimulus interval (pause) latency
+
+--fmin: lower cutoff frequency for filtering
+
+--fmax: upper cutoff frequency for filtering
+
+--tmin: lower boundary of the time window (ms)
+
+--tmax: upper boundary of the time window (ms)
+
+--N: number of stimulus repetitions
 
 For a detailed description of the arguments, see the help message, which can be shown by running with the `-h` flag.
 
