@@ -50,7 +50,7 @@ Commands:
 The [audio/examples](./audio/examples) folder contains examples of WAV files with added commands in the right channel.  
 The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_1s.wav) was obtained by processing the file [audio/origin/input_example_1s.wav](./audio/origin/input_example_1s.wav) by the script [wavpatcher.py](./wavpatcher.py).
 
-## Frequency Following Response Project
+# Frequency Following Response Project
 https://en.wikipedia.org/wiki/Frequency_following_response
 
 The FFR project was launched using ASTIM commands to the right channel of the WAV file.
@@ -59,7 +59,7 @@ Then trigger 6 is set to LOW. At the end of the file, trigger 6 is set to HIGH.
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
-Equipment, software, documentation
+## Equipment, software, documentation
 
 AStim https://mks.ru/en/products/ep-erp https://docs.mks.ru/ru/file/682f7130953d8#to-docs
 
@@ -75,10 +75,10 @@ NeoRec 1.6 https://docs.mks.ru/en/file/65dd0ac5d6895#to-docs
 
 Detailed description and instruction for Frequency_Following_Response_Astim Version 1 https://docs.mks.ru/download/6a50e1d6de9d5
 
-# EEG setup for ASTIM + NVX 36 suite
+## EEG setup for ASTIM + NVX 36 suite
 
 ![](./img/nvx36_scheme.jpg)
 
-# EEG setup for ASTIM + NVX 136 suite
+## EEG setup for ASTIM + NVX 136 suite
 
 ![](./img/nvx_136_scheme.jpg)
