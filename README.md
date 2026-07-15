@@ -81,10 +81,20 @@ Detailed description and instruction for Frequency_Following_Response_Astim Vers
 
 ![](./img/nvx_136_scheme.jpg)
 
-The WAV file with audio stimuli was generated using ASTIM commands in the right channel of the WAV file.
+## Stimuli with ASTIM triggers
+
+A WAV file with audio stimuli was generated using ASTIM commands in the right channel of the WAV file.
 To eliminate bone‑conduction artifacts, two types of triggers were used: trigger 6 with the original stimulus
 and trigger 7 with the inverted stimulus. 
 At the beginning of each stimulus trigger 6 (7) is set to LOW. At the end of the stimulus, trigger 6(7) is set to HIGH. 
+
+> Attention!
+AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.  
+There is no need to enable channels. However, adding RESET CYCLE when making an audio file
+inv = False
+_ = add_triggers(sinus, sin_tone, inv, sample_rate)
+allows to loose less triggers.
+See function add_triggers() in functions.py in Frequency_Following_Response_Astim Version 1
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
@@ -94,6 +104,7 @@ Script create_wav.py from Frequency_Following_Response_Astim Version 1 creates W
 Da syllable or sinusoidal tones with a predefined range of frequencies
 
 Example call:
+           
            python create_wav.py  --function multiple_sin --F 110 220 440 880 --TS 100 --TP 100 --N 2 --INV 0
 
            python create_wav.py  --function repeated_da  --TS 100 --TP 100 --N 100 --INV 1 --wavfname '\\MCSSERVER\DB Temp\physionet.org\FFR\stim\DA+20.wav' 
@@ -110,6 +121,8 @@ Example call:
 
 --wavfname path to an example of syllable to be multiplied and wrapped into audio stimulation
 
+For a detailed description of the arguments, see the help message, which can be shown by running with the `-h` flag.
+
 ## Preprocessing and visualization of FFR
 
 Script command_line_ffr.py creates PDF with a plot of the stimulus, its spectra, grand average of FFR  
@@ -120,7 +133,9 @@ Data (bfd/fif) and associated stimuli (wav) are selected interactively.
 Example call:
         python command_line_ffr.py --TS 250 --TP 200 --fmin 80 --fmax 1500 --tmin -100 --tmax 300 --N 500
 
-## Requirements
+For a detailed description of the arguments, see the help message, which can be shown by running with the `-h` flag.
+
+## Requirements for the Frequency_Following_Response_Astim Version 1
 
         matplotlib==3.8.4
         mne==1.12.1
