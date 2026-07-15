@@ -53,11 +53,7 @@ The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_
 # Frequency Following Response Project
 https://en.wikipedia.org/wiki/Frequency_following_response
 
-The FFR project was launched using ASTIM commands to the right channel of the WAV file.
-Two commands are written to the beginning of the file, enabling both the left and right channels. Commands to enable either only left or only right channel are also present in the script, but by default both channels are enabled.
-Then trigger 6 is set to LOW. At the end of the file, trigger 6 is set to HIGH.
-
-WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
+FFR represents a neurophysiological response to an auditory stimulus, reflecting the neural processing of its acoustic parameters with high precision.
 
 ## Equipment, software, documentation
 
@@ -82,3 +78,40 @@ Detailed description and instruction for Frequency_Following_Response_Astim Vers
 ## EEG setup for ASTIM + NVX 136 suite
 
 ![](./img/nvx_136_scheme.jpg)
+
+The FFR project was launched using ASTIM commands to the right channel of the WAV file.
+Trigger 6 is set to LOW. At the end of the file, trigger 6 is set to HIGH. 
+
+WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
+
+## Audio stimuli generation
+
+create_wav.py creates WAV with audio stimuli Da syllable or sinusoidal tones with a predefined range of frequencies
+
+Example call:
+           python create_wav.py  --function multiple_sin --F 110 220 440 880 --TS 100 --TP 100 --N 2 --INV 0
+
+           python create_wav.py  --function repeated_da  --TS 100 --TP 100 --N 100 --INV 1 --wavfname '\\MCSSERVER\DB Temp\physionet.org\FFR\stim\DA+20.wav' 
+
+--F frequency
+
+--TS stimulus latency
+
+--TP interstimulus interval (pause) latency
+
+--N number of stimulus repetitions
+
+--INV add polar (inverted) stimulus
+
+--wavfname path to an example of syllable to be multiplied and wrapped into audio stimulation
+
+## Requirements
+
+        matplotlib==3.8.4
+        mne==1.12.1
+        numpy==2.3.4
+        pandas==2.3.3
+        pypdf==6.13.1
+        reportlab==4.5.1
+        scipy==1.16.3
+
