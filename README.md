@@ -52,4 +52,4 @@ The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_
 
 ## Frequency Following Response Project
 
-![](C:\Users\msasha\PycharmProjects\AStimWavPatcher\img\FFR_nvx36_136_scheme.pdf)
+![](./img/FFR_nvx36_136_scheme.pdf)
