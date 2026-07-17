@@ -97,10 +97,10 @@ Trigger timing protocol:
 \- At the end of the stimulus, the trigger is set to HIGH. 
 
 > Attention!
-\- AStim correctly transfers triggers only when they are encoded in the right channel with ASTIM commands and zeros elsewhere. 
+> AStim correctly transfers triggers only when they are encoded in the right channel with ASTIM commands and zeros elsewhere. 
 No additional channel activation is required.
-\- Including a RESET CYCLE command when generating the audio file helps reduce trigger loss.
-\- Implementation details can be found in the add_triggers() and make_full_signal() functions in functions.py (Frequency_Following_Response_Astim v1).
+> Including a RESET CYCLE command when generating the audio file helps reduce trigger loss.
+> Implementation details can be found in the add_triggers() and make_full_signal() functions in functions.py (Frequency_Following_Response_Astim v1).
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
@@ -114,11 +114,11 @@ The `create_wav.py` script (from Frequency_Following_Response_Astim v1) generate
 
 Example calls:
            
-# Multiple sinusoidal tones at specified frequencies
+### Multiple sinusoidal tones at specified frequencies
 
            python create_wav.py  --function multiple_sin --F 110 220 440 880 --TS 100 --TP 100 --N 2 --INV 0
 
-# Repeated “Da” syllable with inverted polarity
+### Repeated “Da” syllable with inverted polarity
 
            python create_wav.py  --function repeated_da  --TS 100 --TP 100 --N 100 --INV 1 --wavfname '\\MCSSERVER\DB Temp\physionet.org\FFR\stim\DA+20.wav' 
 
