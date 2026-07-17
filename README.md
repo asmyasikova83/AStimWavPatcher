@@ -86,15 +86,15 @@ Detailed description and instruction for Frequency_Following_Response_Astim Vers
 A WAV file with audio stimuli was generated using ASTIM commands placed in the right channel of the WAV file.
 To mitigate bone‑conduction artifacts, two trigger types are used: 
 
-\* trigger 6: original stimulus polarity.
+\- trigger 6: original stimulus polarity.
 
-\* trigger 7: inverted stimulus polarity.
+\- trigger 7: inverted stimulus polarity.
 
 Trigger timing protocol:
 
-\* At the onset of each stimulus, the corresponding trigger (6 or 7) is set to LOW.
+\- At the onset of each stimulus, the corresponding trigger (6 or 7) is set to LOW.
 
-\* At the end of the stimulus, the trigger is set to HIGH. 
+\- At the end of the stimulus, the trigger is set to HIGH. 
 
 > Attention!
 AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.
@@ -105,8 +105,11 @@ WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
 ## Audio stimuli generation
 
-Script create_wav.py from Frequency_Following_Response_Astim Version 1 creates WAV with audio stimuli:
-Da syllable or sinusoidal tones with a predefined range of frequencies
+The `create_wav.py` script (from Frequency_Following_Response_Astim v1) generates WAV files containing:
+
+\- Syllable stimuli (e.g., “Da”), or
+
+\- Sinusoidal tones within a predefined frequency range.
 
 Example call:
            
@@ -126,14 +129,23 @@ Example call:
 
 --wavfname path to an example of syllable to be multiplied and wrapped into audio stimulation
 
-For a detailed description of the arguments, see the help message, which can be shown by running with the `-h` flag.
+For a full list of arguments, run:
+
+            python create_wav.py -h
 
 ## Preprocessing and visualization of FFR
 
-Script command_line_ffr.py creates PDF with a plot of the stimulus, its spectra, grand average of FFR  
-and FFR spectra, respectively. Additionally, the correlation coefficient R of stimulus waveform and FFR
-waveform over averages is shown. Relative power of FFR spectral peaks over averages is also visualized. 
-Data (bfd/fif) and associated stimuli (wav) are selected interactively.
+The `command_line_ffr.py` script performs FFR preprocessing and generates a PDF report containing:
+
+\- Waveform and spectrum of the stimulus.
+
+\- Grand average of the FFR response and its spectral representation.
+
+\- Correlation coefficient 𝑅 between the stimulus waveform and the FFR waveform (computed over averages).
+
+\- Relative power of FFR spectral peaks across averages.
+
+Data files (`.bfd/.fif`) and associated stimuli (`.wav`) are selected interactively.
 
 Example call:
         
@@ -153,7 +165,10 @@ Example call:
 
 --N: number of stimulus repetitions
 
-For a detailed description of the arguments, see the help message, which can be shown by running with the `-h` flag.
+
+For a full list of arguments, run:
+
+            python command_line_ffr.py -h
 
 ## Requirements for the Frequency_Following_Response_Astim Version 1
 
