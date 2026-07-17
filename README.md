@@ -97,9 +97,10 @@ Trigger timing protocol:
 \- At the end of the stimulus, the trigger is set to HIGH. 
 
 > Attention!
-AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.
-There is no need to enable channels. However, adding RESET CYCLE when making an audio file allows to lose less triggers.
-See function add_triggers(), make_full_signal() in functions.py in Frequency_Following_Response_Astim Version 1.
+\- AStim correctly transfers triggers only when they are encoded in the right channel with ASTIM commands and zeros elsewhere. 
+No additional channel activation is required.
+\- Including a RESET CYCLE command when generating the audio file helps reduce trigger loss.
+\- Implementation details can be found in the add_triggers() and make_full_signal() functions in functions.py (Frequency_Following_Response_Astim v1).
 
 WAV file https://docs.mks.ru/en/file/6a575b8d86e5e#to-docs
 
@@ -111,9 +112,13 @@ The `create_wav.py` script (from Frequency_Following_Response_Astim v1) generate
 
 \- Sinusoidal tones within a predefined frequency range.
 
-Example call:
+Example calls:
            
+# Multiple sinusoidal tones at specified frequencies
+
            python create_wav.py  --function multiple_sin --F 110 220 440 880 --TS 100 --TP 100 --N 2 --INV 0
+
+# Repeated “Da” syllable with inverted polarity
 
            python create_wav.py  --function repeated_da  --TS 100 --TP 100 --N 100 --INV 1 --wavfname '\\MCSSERVER\DB Temp\physionet.org\FFR\stim\DA+20.wav' 
 
@@ -133,7 +138,7 @@ For a full list of arguments, run:
 
             python create_wav.py -h
 
-## Preprocessing and visualization of FFR
+## Preprocessing and Visualization of FFR
 
 The `command_line_ffr.py` script performs FFR preprocessing and generates a PDF report containing:
 
@@ -170,7 +175,7 @@ For a full list of arguments, run:
 
             python command_line_ffr.py -h
 
-## Requirements for the Frequency_Following_Response_Astim Version 1
+## Software Requirements (Frequency_Following_Response_Astim v1)
 
         matplotlib==3.8.4
         mne==1.12.1
