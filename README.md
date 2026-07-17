@@ -83,10 +83,18 @@ Detailed description and instruction for Frequency_Following_Response_Astim Vers
 
 ## Stimuli with ASTIM triggers
 
-A WAV file with audio stimuli was generated using ASTIM commands in the right channel of the WAV file.
-To eliminate bone‑conduction artifacts, two types of triggers were used: trigger 6 with the original stimulus
-and trigger 7 with the inverted stimulus. 
-At the beginning of each stimulus trigger 6 (7) is set to LOW. At the end of the stimulus, trigger 6(7) is set to HIGH. 
+A WAV file with audio stimuli was generated using ASTIM commands placed in the right channel of the WAV file.
+To mitigate bone‑conduction artifacts, two trigger types are used: 
+
+\* trigger 6: original stimulus polarity.
+
+\* trigger 7: inverted stimulus polarity.
+
+Trigger timing protocol:
+
+\* At the onset of each stimulus, the corresponding trigger (6 or 7) is set to LOW.
+
+\* At the end of the stimulus, the trigger is set to HIGH. 
 
 > Attention!
 AStim correctly transfers triggers if they are in the right channel with ASTIM commands and zeros otherwise.
