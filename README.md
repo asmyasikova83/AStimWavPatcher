@@ -61,7 +61,7 @@ AStim Auditory stimulator for FFR paradigms https://mks.ru/en/products/ep-erp ht
 
 NVX 36 EEG acquisition system https://mks.ru/en/products/nvx
 
-NVX 136 EEG acquisition system (high‑channel variant) https://mks.ru/en/products/nvx-136
+NVX 136 EEG acquisition system https://mks.ru/en/products/nvx-136
 
 MCScap EEG cap system https://mks.ru/en/products/mcscap
 
