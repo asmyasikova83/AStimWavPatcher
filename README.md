@@ -53,32 +53,31 @@ The file [audio/examples/output_example_1s.wav](./audio/examples/output_example_
 # Frequency Following Response Project
 https://en.wikipedia.org/wiki/Frequency_following_response
 
-FFR represents a neurophysiological response to an auditory stimulus, reflecting the neural processing of its acoustic parameters with high precision.
+Frequency Following Response (FFR) is a neurophysiological response to an auditory stimulus that reflects the neural processing of its acoustic parameters with high precision.
 
 ## Equipment, software, documentation
 
-AStim https://mks.ru/en/products/ep-erp https://docs.mks.ru/ru/file/682f7130953d8#to-docs
+AStim Auditory stimulator for FFR paradigms https://mks.ru/en/products/ep-erp https://docs.mks.ru/ru/file/682f7130953d8#to-docs
 
-NVX 36 https://mks.ru/en/products/nvx
+NVX 36 EEG acquisition system https://mks.ru/en/products/nvx
 
-NVX 136 https://mks.ru/en/products/nvx-136
+NVX 136 EEG acquisition system (high‑channel variant) https://mks.ru/en/products/nvx-136
 
-MCScap https://mks.ru/en/products/mcscap
+MCScap EEG cap system https://mks.ru/en/products/mcscap
 
-Electrodes MCScap-CS22 https://mcscap.ru/catalog/tes-elektrody-dlya-stimulyatsii/mcscap-cs22/
+Electrodes MCScap-CS22 Dry/gel electrodes for stimulation and recording https://mcscap.ru/catalog/tes-elektrody-dlya-stimulyatsii/mcscap-cs22/
 
-NeoRec 1.6 https://docs.mks.ru/en/file/65dd0ac5d6895#to-docs
+NeoRec 1.6 Data acquisition and control software https://docs.mks.ru/en/file/65dd0ac5d6895#to-docs
 
-Frequency_Following_Response_Astim Version 1 https://github.com/asmyasikova83/Frequency_Following_Response_Astim.git
+Frequency_Following_Response_Astim (v1) Custom Python suite for FFR stimulus generation and analysis https://github.com/asmyasikova83/Frequency_Following_Response_Astim.git
 
-Detailed description and instruction for Frequency_Following_Response_Astim Version 1 https://docs.mks.ru/download/6a50e1d6de9d5
+FFR Astim v1 Documentation https://docs.mks.ru/download/6a50e1d6de9d5
 
-## EEG setup for ASTIM + NVX 36 suite
+## Configuration with ASTIM + EEG NVX36 Suite
 
 ![](./img/nvx36_scheme.jpg)
 
-## EEG setup for ASTIM + NVX 136 suite
-
+## Configuration with ASTIM + EEG NVX36 Suite
 ![](./img/nvx_136_scheme.jpg)
 
 ## Stimuli with ASTIM triggers
